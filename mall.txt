@@ -14,3 +14,4 @@ Telefon:###
 Pris: @£@
 Detta kvitto måste uppvisas vid  upphämtning
 kvittonummer:@$$
+£45

@@ -27,15 +27,16 @@ namespace kvitto
    /// <main>
    /// main class
    /// </main>
-    public partial class Form1 : Form
+    public partial class Kvitto : Form
     {
         #region klass globala variabler
+        int cc;
         StringBuilder sb = new StringBuilder();
-        string siffra;
+        string siffra="0";
         int count;
         string SlutText = null;
         #endregion 
-        public Form1()
+        public Kvitto()
         {   
             InitializeComponent();
             slumpa();
@@ -61,9 +62,13 @@ namespace kvitto
         private void btnSkrivut_Click(object sender, EventArgs e)
         {
            // aktivera detta innan Release;:;
-           //  textfil();
+             
              read();
              Write();
+             if (checkBox1.Checked == true)
+             { textfil(); }
+             else { MessageBox.Show("The printer is not enabeld"); }
+
         }
 
         #region kontroller
@@ -155,11 +160,11 @@ namespace kvitto
             PCPrint p=new PCPrint();
 
             p.PrinterFont = new Font("Verdana", 10);
-            string text = " @@@@---inlämningskvitto---@@ Namn:" + txtboxNamn.Text + "@ modell: " + txtboxModell.Text + "@ Tjänst:" + tjänst + "@ Instruktion: " + extra + "@ Lösenord: " + txtboxAnnat.Text + "@ IMEI/Snr: " + txtboxIMEI.Text + "@- - - - - - - - - - - - - @" + " Telefon:" + txtboxTlfnr.Text + "@- - - - - - - - - - - - - " + "@ Pris: " + txtboxPris.Text + "kr" + "@- - - - - - - - - - - - - @ Detta kvitto måste uppvisas vid  upphämtning@" +" kvittonummer: "+ siffra + "@- - - - - - - - - - - - - @ "+" ";
-            text = text.Replace("@", Environment.NewLine);
+           // string text = " @@@@---inlämningskvitto---@@ Namn:" + txtboxNamn.Text + "@ modell: " + txtboxModell.Text + "@ Tjänst:" + tjänst + "@ Instruktion: " + extra + "@ Lösenord: " + txtboxAnnat.Text + "@ IMEI/Snr: " + txtboxIMEI.Text + "@- - - - - - - - - - - - - @" + " Telefon:" + txtboxTlfnr.Text + "@- - - - - - - - - - - - - " + "@ Pris: " + txtboxPris.Text + "kr" + "@- - - - - - - - - - - - - @ Detta kvitto måste uppvisas vid  upphämtning@" +" kvittonummer: "+ siffra + "@- - - - - - - - - - - - - @ "+" ";
+            //text = text.Replace("@", Environment.NewLine);
             
             p.PrinterFont2 = new Font("verdana", 35);
-            p.TextToPrint = sb.ToString();
+            p.TextToPrint = SlutText;
             p.TextToPrint2 = siffra;
            
            p.Print();
@@ -168,15 +173,23 @@ namespace kvitto
        
         public void slumpa()
         {
-            DateTime today=DateTime.Today;
-            string datum;
-            string dag;
-            datum = today.Month.ToString();
-            dag = today.Day.ToString();
-            siffra = datum + dag+count.ToString();
-            Random r=new Random();
-            siffra+=r.Next(0,999).ToString();
-            count++;         
+            if (count==1)
+            {
+                count = 0;
+            }
+            else
+            {
+                  DateTime today = DateTime.Today;
+                string datum;
+                string dag;
+                datum = today.Month.ToString();
+                dag = today.Day.ToString();
+                siffra = datum + dag + cc.ToString();
+                Random r = new Random();
+                siffra += r.Next(0, 999).ToString();
+                cc++;
+                count++;
+            }
         }
         public void textfil()
         {
@@ -214,7 +227,7 @@ namespace kvitto
             sb.AppendLine("kvittonummer:" + siffra);
 
           //  richTextBox1.Text = sb.ToString();
-           // printdocument();
+            printdocument();
             read();
             Write();
         }
@@ -379,23 +392,74 @@ namespace kvitto
         public void Write()
         {
             string text = SlutText;
-            text.Replace("@@@","");
-           /* text.Replace("£££", txtboxModell.Text);
-            text.Replace("$$$", "temp");
-            text.Replace("&&&", txtboxAnnat.Text);
-            text.Replace("¤¤¤", txtboxIMEI.Text);
-            text.Replace("###", txtboxTlfnr.Text);
-            text.Replace("@£@", txtboxPris.Text);
-            text.Replace("@$$", siffra);
-            */
-            SlutText = text;
-            richTextBox1.Text = text;
+          text=  text.Replace("@@@", txtboxNamn.Text);
+          text = text.Replace("£££", txtboxModell.Text);
+          text = text.Replace("$$$", "temp");
+          text = text.Replace("€€€", rtxtboxAnnat.Text);
+          text = text.Replace("&&&", txtboxAnnat.Text);
+          text = text.Replace("¤¤¤", txtboxIMEI.Text);
+          text = text.Replace("###", txtboxTlfnr.Text);
+          text = text.Replace("@£@", txtboxPris.Text);
+          text = text.Replace("@$$", siffra);
+          
+           SlutText = text;
+
+            richTextBox1.Text = SlutText;
+            slumpa();
+            
 
 
         }
         #endregion
+        #region save
+        public void save()
+        {FileStream fileStream = File.Open("mall.txt", FileMode.Open);
 
+/* 
+ * Set the length of filestream to 0 and flush it to the physical file.
+ *
+ * Flushing the stream is important because this ensures that
+ * the changes to the stream trickle down to the physical file.
+ * 
+ */
+fileStream.SetLength(0);
+fileStream.Close(); // This flushes the content, too.
+            StreamWriter sw = new StreamWriter("mall.txt",true,Encoding.Default);
+
+            using (sw)
+            {
+                
+                sw.Write(richTextBox1.Text);
+            }
+        }
         #endregion
+        #endregion
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            save();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            StringBuilder sbb = new StringBuilder();
+
+            using (StreamReader sr = new StreamReader("mall.txt", Encoding.Default))
+            {
+                while (sr.Peek() >= 0)
+                {
+                    sbb.AppendLine(sr.ReadLine());
+
+                }
+
+            }
+            richTextBox1.Text = sbb.ToString();
+        }
+
+        private void buttoncleartext_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
+        }
     }
     ///
     ///det som ska göras är att få kontakt med databasen på crystone, sen mata data dit, sen bör det vara klart
@@ -479,7 +543,7 @@ namespace kvitto
             //Set the file stream
             //Instantiate out Text property to an empty string
             _text = string.Empty;
-        }
+        }    
 
         /// <summary>
         /// Constructor to initialize our printing object

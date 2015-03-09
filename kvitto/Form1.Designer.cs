@@ -1,6 +1,6 @@
 ﻿namespace kvitto
 {
-    partial class Form1
+    partial class Kvitto
     {
         /// <summary>
         /// Required designer variable.
@@ -44,11 +44,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnläggtill = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttoncleartext = new System.Windows.Forms.Button();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtboxNamn
             // 
-            this.txtboxNamn.Location = new System.Drawing.Point(13, 13);
+            this.txtboxNamn.Location = new System.Drawing.Point(6, 6);
             this.txtboxNamn.Name = "txtboxNamn";
             this.txtboxNamn.Size = new System.Drawing.Size(185, 20);
             this.txtboxNamn.TabIndex = 0;
@@ -57,7 +68,7 @@
             // 
             // txtboxModell
             // 
-            this.txtboxModell.Location = new System.Drawing.Point(13, 39);
+            this.txtboxModell.Location = new System.Drawing.Point(6, 32);
             this.txtboxModell.Name = "txtboxModell";
             this.txtboxModell.Size = new System.Drawing.Size(185, 20);
             this.txtboxModell.TabIndex = 1;
@@ -66,7 +77,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(13, 289);
+            this.btnClear.Location = new System.Drawing.Point(6, 282);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(92, 23);
             this.btnClear.TabIndex = 4;
@@ -76,7 +87,7 @@
             // 
             // btnSkrivut
             // 
-            this.btnSkrivut.Location = new System.Drawing.Point(106, 289);
+            this.btnSkrivut.Location = new System.Drawing.Point(99, 282);
             this.btnSkrivut.Name = "btnSkrivut";
             this.btnSkrivut.Size = new System.Drawing.Size(92, 23);
             this.btnSkrivut.TabIndex = 7;
@@ -86,7 +97,7 @@
             // 
             // txtboxAnnat
             // 
-            this.txtboxAnnat.Location = new System.Drawing.Point(67, 194);
+            this.txtboxAnnat.Location = new System.Drawing.Point(60, 187);
             this.txtboxAnnat.Name = "txtboxAnnat";
             this.txtboxAnnat.Size = new System.Drawing.Size(131, 20);
             this.txtboxAnnat.TabIndex = 4;
@@ -96,7 +107,7 @@
             // chkboxFelsökning
             // 
             this.chkboxFelsökning.AutoSize = true;
-            this.chkboxFelsökning.Location = new System.Drawing.Point(13, 94);
+            this.chkboxFelsökning.Location = new System.Drawing.Point(6, 87);
             this.chkboxFelsökning.Name = "chkboxFelsökning";
             this.chkboxFelsökning.Size = new System.Drawing.Size(77, 17);
             this.chkboxFelsökning.TabIndex = 12;
@@ -107,7 +118,7 @@
             // chkboxUpplåsning
             // 
             this.chkboxUpplåsning.AutoSize = true;
-            this.chkboxUpplåsning.Location = new System.Drawing.Point(13, 118);
+            this.chkboxUpplåsning.Location = new System.Drawing.Point(6, 111);
             this.chkboxUpplåsning.Name = "chkboxUpplåsning";
             this.chkboxUpplåsning.Size = new System.Drawing.Size(79, 17);
             this.chkboxUpplåsning.TabIndex = 13;
@@ -117,7 +128,7 @@
             // chkboxAnnat
             // 
             this.chkboxAnnat.AutoSize = true;
-            this.chkboxAnnat.Location = new System.Drawing.Point(13, 142);
+            this.chkboxAnnat.Location = new System.Drawing.Point(6, 135);
             this.chkboxAnnat.Name = "chkboxAnnat";
             this.chkboxAnnat.Size = new System.Drawing.Size(54, 17);
             this.chkboxAnnat.TabIndex = 14;
@@ -127,7 +138,7 @@
             // 
             // rtxtboxAnnat
             // 
-            this.rtxtboxAnnat.Location = new System.Drawing.Point(98, 92);
+            this.rtxtboxAnnat.Location = new System.Drawing.Point(91, 85);
             this.rtxtboxAnnat.Name = "rtxtboxAnnat";
             this.rtxtboxAnnat.Size = new System.Drawing.Size(100, 96);
             this.rtxtboxAnnat.TabIndex = 3;
@@ -137,7 +148,7 @@
             // 
             // txtboxIMEI
             // 
-            this.txtboxIMEI.Location = new System.Drawing.Point(13, 221);
+            this.txtboxIMEI.Location = new System.Drawing.Point(6, 214);
             this.txtboxIMEI.Name = "txtboxIMEI";
             this.txtboxIMEI.Size = new System.Drawing.Size(185, 20);
             this.txtboxIMEI.TabIndex = 5;
@@ -146,7 +157,7 @@
             // 
             // txtboxTlfnr
             // 
-            this.txtboxTlfnr.Location = new System.Drawing.Point(13, 66);
+            this.txtboxTlfnr.Location = new System.Drawing.Point(6, 59);
             this.txtboxTlfnr.Name = "txtboxTlfnr";
             this.txtboxTlfnr.Size = new System.Drawing.Size(185, 20);
             this.txtboxTlfnr.TabIndex = 2;
@@ -155,7 +166,7 @@
             // 
             // txtboxPris
             // 
-            this.txtboxPris.Location = new System.Drawing.Point(46, 254);
+            this.txtboxPris.Location = new System.Drawing.Point(39, 247);
             this.txtboxPris.Name = "txtboxPris";
             this.txtboxPris.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtboxPris.Size = new System.Drawing.Size(151, 20);
@@ -164,7 +175,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 254);
+            this.label1.Location = new System.Drawing.Point(6, 247);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 19;
@@ -173,7 +184,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 197);
+            this.label2.Location = new System.Drawing.Point(3, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 21;
@@ -181,7 +192,7 @@
             // 
             // btnläggtill
             // 
-            this.btnläggtill.Location = new System.Drawing.Point(13, 318);
+            this.btnläggtill.Location = new System.Drawing.Point(6, 311);
             this.btnläggtill.Name = "btnläggtill";
             this.btnläggtill.Size = new System.Drawing.Size(184, 29);
             this.btnläggtill.TabIndex = 22;
@@ -191,40 +202,131 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(204, 12);
+            this.richTextBox1.Location = new System.Drawing.Point(6, 6);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(391, 335);
+            this.richTextBox1.Size = new System.Drawing.Size(333, 335);
             this.richTextBox1.TabIndex = 23;
             this.richTextBox1.Text = "";
             // 
-            // Form1
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(345, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 24;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(345, 33);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 25;
+            this.btnEdit.Text = "GET";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(2, 2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1143, 603);
+            this.tabControl1.TabIndex = 26;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.txtboxNamn);
+            this.tabPage1.Controls.Add(this.txtboxModell);
+            this.tabPage1.Controls.Add(this.btnClear);
+            this.tabPage1.Controls.Add(this.btnSkrivut);
+            this.tabPage1.Controls.Add(this.btnläggtill);
+            this.tabPage1.Controls.Add(this.txtboxAnnat);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.chkboxFelsökning);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.chkboxUpplåsning);
+            this.tabPage1.Controls.Add(this.txtboxPris);
+            this.tabPage1.Controls.Add(this.chkboxAnnat);
+            this.tabPage1.Controls.Add(this.txtboxTlfnr);
+            this.tabPage1.Controls.Add(this.rtxtboxAnnat);
+            this.tabPage1.Controls.Add(this.txtboxIMEI);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1135, 577);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Print";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.buttoncleartext);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.checkBox1);
+            this.tabPage2.Controls.Add(this.richTextBox1);
+            this.tabPage2.Controls.Add(this.btnEdit);
+            this.tabPage2.Controls.Add(this.btnSave);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1135, 577);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Settings";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(345, 324);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(67, 17);
+            this.checkBox1.TabIndex = 26;
+            this.checkBox1.Text = "ON/OFF";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(2, 344);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(406, 20);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "The Symbols must remain for the program to work";
+            // 
+            // buttoncleartext
+            // 
+            this.buttoncleartext.Location = new System.Drawing.Point(345, 62);
+            this.buttoncleartext.Name = "buttoncleartext";
+            this.buttoncleartext.Size = new System.Drawing.Size(75, 23);
+            this.buttoncleartext.TabIndex = 28;
+            this.buttoncleartext.Text = "Clear text";
+            this.buttoncleartext.UseVisualStyleBackColor = true;
+            this.buttoncleartext.Click += new System.EventHandler(this.buttoncleartext_Click);
+            // 
+            // Kvitto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 355);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.btnläggtill);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtboxPris);
-            this.Controls.Add(this.txtboxTlfnr);
-            this.Controls.Add(this.txtboxIMEI);
-            this.Controls.Add(this.rtxtboxAnnat);
-            this.Controls.Add(this.chkboxAnnat);
-            this.Controls.Add(this.chkboxUpplåsning);
-            this.Controls.Add(this.chkboxFelsökning);
-            this.Controls.Add(this.txtboxAnnat);
-            this.Controls.Add(this.btnSkrivut);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.txtboxModell);
-            this.Controls.Add(this.txtboxNamn);
+            this.ClientSize = new System.Drawing.Size(445, 415);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
-            this.Text = "b";
+            this.Name = "Kvitto";
+            this.Text = "kvitto";
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -246,6 +348,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnläggtill;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttoncleartext;
     }
 }
 
